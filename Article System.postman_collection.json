@@ -1,0 +1,135 @@
+{
+	"info": {
+		"_postman_id": "4407d262-b07d-413c-a5f2-77f6f448c9b7",
+		"name": "Article System",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get All Articles",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:4003/api/article/all"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Single Article",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:4003/api/article/5d84bdeafb2fe3539c18c989"
+			},
+			"response": []
+		},
+		{
+			"name": "Add Article",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "text/plain",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "author_name",
+							"value": "Tejaswini Deshpande",
+							"type": "text"
+						},
+						{
+							"key": "article_title",
+							"value": "Tejus Title",
+							"type": "text"
+						},
+						{
+							"key": "article_description",
+							"value": "Say time goes by and we want to display all the kittens we've seen. We can access all of the kitten documents through our Kitten model.",
+							"type": "text"
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "text"
+						}
+					}
+				},
+				"url": "http://localhost:4003/api/article/add"
+			},
+			"response": []
+		},
+		{
+			"name": "Update Article",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "text/plain",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "author_name",
+							"value": "Siddharth Deshpande",
+							"type": "text"
+						},
+						{
+							"key": "article_title",
+							"value": "Some article title",
+							"type": "text"
+						},
+						{
+							"key": "article_description",
+							"value": "You define routing using methods of the Express app object that correspond to HTTP methods; for example, ... next() // pass control to the next handler }) ... Route parameters are named URL segments that are used to capture the values specified at their position in the URL. .... Express is a project of the Node.js Foundation.",
+							"type": "text"
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "text"
+						}
+					}
+				},
+				"url": "http://localhost:4003/api/article/update/5d84be2efb2fe3539c18c98a"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Article",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "text/plain"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [],
+					"options": {
+						"raw": {
+							"language": "text"
+						}
+					}
+				},
+				"url": "http://localhost:4003/api/article/delete/5d84bdeafb2fe3539c18c989"
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
