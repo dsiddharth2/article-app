@@ -1,5 +1,6 @@
 import { takeEvery, call, put } from "redux-saga/effects";
-import { LOAD_ARTICLES } from './constants';
+import { LOAD_ARTICLES, ARTICLE_LOADED_SUCCESS, ARTICLE_LOADED_FAILED } from './constants';
+import { loadedArticles } from './actions';
 
 export default function* watcherSaga() {
     yield takeEvery(LOAD_ARTICLES, workerSaga);
@@ -7,18 +8,21 @@ export default function* watcherSaga() {
 
 function* workerSaga() {
     try {
-      const payload = yield call(getData);
-      console.log(payload);
-      yield put({ type: "DATA_LOADED", payload });
+        const payload = yield call(getData);
+        yield put(loadedArticles(payload));
     } catch (e) {
-      yield put({ type: "API_ERRORED", payload: e });
+        console.log(e);
+        //yield put({ type: "API_ERRORED", payload: e });
     }
 }
 
 function getData() {
     return fetch("https://jsonplaceholder.typicode.com/posts")
         .then(function(response) {
-            console.log(response);
-            response.json()
-        });
+            if(response.status === 200) {
+                return response.json()
+            } else {
+                throw ("Failed to load the data");
+            }
+    });
 }

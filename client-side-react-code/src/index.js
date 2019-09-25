@@ -5,6 +5,8 @@ import { Provider } from "react-redux";
 import store from "./store";
 import * as serviceWorker from './serviceWorker';
 
+window.store = store;
+
 const MOUNT_NODE = document.getElementById('root');
 
 ReactDOM.render(

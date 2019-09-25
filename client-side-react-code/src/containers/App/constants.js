@@ -10,4 +10,8 @@
  */
 
 export const LOAD_ARTICLES = 'articleApp/App/LOAD_ARTICLES';
+export const ARTICLE_LOADED_SUCCESS = 'articleApp/App/LOAD_ARTICLE_SUCCESS';
+export const ARTICLE_LOADED_FAILED = 'articleApp/App/LOAD_ARTICLE_FAILED';
+
 export const ADD_ARTICLE = 'articleApp/App/ADD_ARTICLE';
+
